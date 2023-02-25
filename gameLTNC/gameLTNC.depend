@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1677317317 source:g:\codeblocks\game\game123\gameltnc\main.cpp
+	<iostream>
+	"SDL.h"
+	<string>
+	<SDL_image.h>
+
+1676026367 source:g:\codeblocks\game\game123\gameltnc\testsdl.cpp
+	<iostream>
+	"SDL.h"
+	<string>
+	<SDL_image.h>
+
+1676027722 g:\codeblocks\game\game123\gameltnc\sdl_utils.h
+	<iostream>
+	<SDL.h>
+
