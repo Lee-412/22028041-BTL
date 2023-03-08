@@ -42,3 +42,4 @@ void INIT::waitUntilKeyPressed()
         SDL_Delay(10);
     }
 }
+

@@ -32,8 +32,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Common_Function.cpp" />
-		<Unit filename="Common_Function.h" />
+		<Unit filename="Background.cpp" />
+		<Unit filename="Background.h" />
+		<Unit filename="BaseObject.cpp" />
+		<Unit filename="BaseObject.h" />
+		<Unit filename="MainObject.cpp" />
+		<Unit filename="MainObject.h" />
+		<Unit filename="init_clean.cpp" />
+		<Unit filename="init_clean.h" />
+		<Unit filename="library.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Extensions>
