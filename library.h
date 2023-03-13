@@ -6,6 +6,7 @@
 #include<string>
 #include<SDL_image.h>
 
+
 static const int SCREEN_WIDTH = 1200;
 static const int SCREEN_HEIGHT = 600;
 static const char* WINDOW_TITLE = "Tank_Ranarok";

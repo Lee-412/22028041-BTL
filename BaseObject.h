@@ -3,22 +3,29 @@
 
 #include"library.h"
 #include "Background.h"
+
 class BaseObject
 {
+public:
     BaseObject();
-    SBaseObject();
-    SDL_Texture* p_object;
-    void Show(SDL_Texture* des);
-    void Loadimg(const char* file_path);
+    ~BaseObject();  // thêm destructor
+    void Show(SDL_Texture* des, int x, int y);
+    bool Loadimg(const char* file_path);  // sửa lại khai báo hàm Loadimg thành public
+    SDL_Texture* GetP_object()
+    {
+        return p_object;
+    }
     void SetRect(int x, int y)
     {
-        rect_.x=x;
-        rect_.y=y;
+        rect_.x = x;
+        rect_.y = y;
     }
-    SDL_Rect Getrect() const {return rect_;}
+
+    SDL_Rect Getrect() const { return rect_; }
 
 protected:
     SDL_Rect rect_;
-
+    SDL_Texture* p_object ;
 };
-#endif // BASEOBJECT_H_
+
+#endif

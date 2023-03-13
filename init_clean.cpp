@@ -1,6 +1,7 @@
 #include "library.h"
 #include "Background.h"
 #include "init_clean.h"
+#include "MainObject.h"
 
 void INIT::logSDLError(std::ostream& os,const std::string &msg, bool fatal)
 {
@@ -31,15 +32,5 @@ void INIT::quitSDL(SDL_Window* window, SDL_Renderer* renderer)
     SDL_Quit();
 }
 
-void INIT::waitUntilKeyPressed()
-{
-    SDL_Event e;
-    while (true)
-    {
-        if ( SDL_WaitEvent(&e) != 0 &&
-                (e.type == SDL_QUIT) )
-            return;
-        SDL_Delay(10);
-    }
-}
+
 

@@ -1,8 +1,10 @@
 # depslib dependency file v1.0
-1678207483 source:g:\codeblocks\game\game123\gameltnc\main.cpp
+1678692146 source:g:\codeblocks\game\game123\gameltnc\main.cpp
 	"library.h"
 	"Background.h"
 	"init_clean.h"
+	"MainObject.h"
+	"BaseObject.h"
 
 1676026367 source:g:\codeblocks\game\game123\gameltnc\testsdl.cpp
 	<iostream>
@@ -25,27 +27,54 @@
 1678182086 source:g:\codeblocks\game\game123\gameltnc\common_function.cpp
 	"Common_Function.h"
 
-1678207488 source:g:\codeblocks\game\game123\gameltnc\background.cpp
+1678469374 source:g:\codeblocks\game\game123\gameltnc\background.cpp
 	"Background.h"
 	"library.h"
 	"init_clean.h"
 
-1678201484 g:\codeblocks\game\game123\gameltnc\background.h
+1678689917 g:\codeblocks\game\game123\gameltnc\background.h
 	"library.h"
 	"init_clean.h"
+	"BaseObject.h"
 
-1678291497 g:\codeblocks\game\game123\gameltnc\library.h
+1678471152 g:\codeblocks\game\game123\gameltnc\library.h
 	<iostream>
 	"SDL.h"
 	<string>
 	<SDL_image.h>
 
-1678200515 source:g:\codeblocks\game\game123\gameltnc\init_clean.cpp
+1678476659 source:g:\codeblocks\game\game123\gameltnc\init_clean.cpp
+	"library.h"
+	"Background.h"
+	"init_clean.h"
+	"MainObject.h"
+
+1678472454 g:\codeblocks\game\game123\gameltnc\init_clean.h
+	"Background.h"
+	"library.h"
+	"BaseObject.h"
+
+1678691708 source:g:\codeblocks\game\game123\gameltnc\baseobject.cpp
+	"BaseObject.h"
 	"library.h"
 	"Background.h"
 	"init_clean.h"
 
-1678291499 g:\codeblocks\game\game123\gameltnc\init_clean.h
+1678533065 g:\codeblocks\game\game123\gameltnc\baseobject.h
+	"library.h"
+	"Background.h"
+
+1678692762 source:g:\codeblocks\game\game123\gameltnc\mainobject.cpp
+	"library.h"
+	"BaseObject.h"
+	"MainObject.h"
+	"Background.h"
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+
+1678691916 g:\codeblocks\game\game123\gameltnc\mainobject.h
 	"Background.h"
 	"library.h"
+	"BaseObject.h"
 

@@ -1,27 +1,130 @@
+#include "library.h"
 #include "BaseObject.h"
 #include "MainObject.h"
-#include "library.h"
 #include "Background.h"
-
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 MainObject::MainObject()
 {
-    rect_x=0;
-    rect_y=0;
-    rect_w=WIDTH_MAIN_OBJECT;
-    rect_h=HEIGHT_MAIN_OBJECT;
+    rect_.x=0;
+    rect_.y=0;
+    rect_.w=WIDTH_MAIN_OBJECT;
+    rect_.h=HEIGHT_MAIN_OBJECT;
     x_val=0;
     y_val=0;
 }
 
-MainObject::~Mainobject()
+MainObject::~MainObject()
 {
     ;
 }
+#define MAX_SPEED 6
+#define MIN_SPEED -6
 
-void MainObject::HandleInput(SDL_Event e)
+void MainObject::HandleInput(SDL_Event events)
 {
+    if(events.type == SDL_KEYDOWN)
+    {
+    switch (events.key.keysym.sym)
+        {
+        case SDLK_UP:
+        {
+            y_val = std::max(y_val - 3, MIN_SPEED);
+            std::cout<<y_val<<std::endl;
+            break;
+        }
+        case SDLK_DOWN:
+        {
+            y_val = std::min(y_val + 3, MAX_SPEED);
+            std::cout<<y_val<<std::endl;
+            break;
+        }
+        case SDLK_RIGHT:
+        {
+            x_val = std::min(x_val + 3, MAX_SPEED);
+            std::cout<<x_val<<std::endl;
+            break;
+        }
+        case SDLK_LEFT:
+        {
+            x_val = std::max(x_val - 3, MIN_SPEED);
+            std::cout<<y_val<<std::endl;
+            break;
+        }
+        default: break;
+        }
+
+    }
+
+    else if(events.type == SDL_KEYUP)
+    {
+        switch (events.key.keysym.sym)
+        {
+            case SDLK_UP:
+            {
+                y_val+=3;
+                 std::cout<<y_val<<std::endl;
+                break;
+            }
+            case SDLK_DOWN:
+            {
+                y_val-=3;
+                std::cout<<y_val<<std::endl;
+                break;
+            }
+            case SDLK_RIGHT:
+            {
+                x_val-=3;
+                std::cout<<x_val<<std::endl;
+                break;
+            }
+
+            case SDLK_LEFT:
+            {
+                x_val+=3;
+                std::cout<<x_val<<std::endl;
+                break;
+            }
+            default: break;
+        }
+
+
+    }
+    else if( events.type == SDL_MOUSEBUTTONDOWN)
+    {
+
+    }
+    else if(events.type == SDL_MOUSEBUTTONUP)
+    {
+
+    }
+    else
+    {
+        ;
+    }
+
+}
+void MainObject::Handlemove(int &x, int &y)
+{
+int new_x = rect_.x + x_val;
+if(new_x < 0 || new_x + rect_.w > SCREEN_WIDTH)
+{
+new_x = rect_.x;
+}
+int new_y = rect_.y + y_val;
+if(new_y < 0 || new_y + rect_.h > SCREEN_HEIGHT)
+{
+new_y = rect_.y;
+}
+rect_.x = new_x;
+rect_.y = new_y;
+x = rect_.x;
+y = rect_.y;
 }
 
-void MainObject::Handlemove()
+void MainObject::Show(SDL_Texture* des, int x,int y)
 {
+
+    BaseObject::Show(des, x, y);
 }

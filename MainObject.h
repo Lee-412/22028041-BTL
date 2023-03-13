@@ -6,18 +6,22 @@
 #include "BaseObject.h"
 
 #define WIDTH_MAIN_OBJECT 64;
-#define HEIGHT_MAIN_OBJECT 91
+#define HEIGHT_MAIN_OBJECT 91;
 
-class MainObject :: public BaseObject
+
+class MainObject : public BaseObject
 {
 public:
     MainObject();
-    ~Mainobject();
+    ~MainObject();
 
-    void HandleIput (SDL_Event e);
-    void Handlemove();
+    void HandleInput (SDL_Event e);
+    void Handlemove(int &x, int &y);
+    void Show(SDL_Texture* des, int x, int y);
+
 
 protected:
+
     int x_val;
     int y_val;
 };
