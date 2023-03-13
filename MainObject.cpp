@@ -19,8 +19,8 @@ MainObject::~MainObject()
 {
     ;
 }
-#define MAX_SPEED 6
-#define MIN_SPEED -6
+#define MAX_SPEED 3
+#define MIN_SPEED -3
 
 void MainObject::HandleInput(SDL_Event events)
 {
@@ -108,15 +108,29 @@ void MainObject::HandleInput(SDL_Event events)
 void MainObject::Handlemove(int &x, int &y)
 {
 int new_x = rect_.x + x_val;
-if(new_x < 0 || new_x + rect_.w > SCREEN_WIDTH)
+if(new_x < 0)
 {
-new_x = rect_.x;
+    x_val = 0;
+    new_x = 0;
 }
+else if(new_x + rect_.w > SCREEN_WIDTH)
+{
+    x_val = 0;
+    new_x = SCREEN_WIDTH - rect_.w;
+}
+
 int new_y = rect_.y + y_val;
-if(new_y < 0 || new_y + rect_.h > SCREEN_HEIGHT)
+if(new_y < 0)
 {
-new_y = rect_.y;
+    y_val = 0;
+    new_y = 0;
 }
+else if(new_y + rect_.h > SCREEN_HEIGHT)
+{
+    y_val = 0;
+    new_y = SCREEN_HEIGHT - rect_.h;
+}
+
 rect_.x = new_x;
 rect_.y = new_y;
 x = rect_.x;
